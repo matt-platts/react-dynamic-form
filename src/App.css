@@ -1,0 +1,74 @@
+.App {
+  text-align: left;
+  border:1px blue solid;
+  width:800px;
+  margin:20px auto;
+  padding-left:40px;
+  padding-right:40px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.selectDiv {
+	clear:both;
+	padding:15px;
+}
+
+label {font-weight:bold; margin-right:15px; display:inline-block; width:150px;}
+
+.submitButton {
+	margin:0px auto;
+	margin-top:15px;
+	clear:both;
+	background-color:#3333ff;
+	color:white;
+	text-align:center;
+	margin-left:180px;
+}
+
+fieldset {
+  padding:10px;
+  margin:30px;
+}
+
+thead {background-color:#f1f1f1; font-weight:bold;}
+
+.checkboxExtra {
+	margin-left:50px;
+}
+.checkboxExtra label {
+	font-weight:normal; font-size:11px;
+}
