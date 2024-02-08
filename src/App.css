@@ -1,6 +1,6 @@
 .App {
   text-align: left;
-  border:1px blue solid;
+  border:1px #3333aa solid;
   width:800px;
   margin:20px auto;
   padding-left:40px;
@@ -50,13 +50,13 @@
 label {font-weight:bold; margin-right:15px; display:inline-block; width:150px;}
 
 .submitButton {
+	float:none;
+	display:block;
 	margin:0px auto;
 	margin-top:15px;
 	clear:both;
 	background-color:#3333ff;
 	color:white;
-	text-align:center;
-	margin-left:180px;
 }
 
 fieldset {

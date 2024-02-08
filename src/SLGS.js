@@ -10,43 +10,41 @@ function App() {
   const baseOption = watch("baseLicenseOption");
   const typeOption = watch("typeLicensingOption");
   const durationOption = watch("durationLicenseOption");
-  const [selected, setSelected] = React.useState(""); 
-  const onSubmit = (data) => { console.log(data); };
 
-  const changeSelectOptionHandler = (event) => { 
-	setSelected(event.target.value); 
-	document.getElementById('baseLicenseOption').selectedIndex=0
-  }; 
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
-useEffect(() => {
-	if (selectedOption === "option1"){
-		let baseLicenseOptions = asgOptions;
-		let bl_type=asgOptions;
-		console.log("its option1");
-		console.log(baseLicenseOptions)
-		updateBaseOptions();
-	} else if (selectedOption === "option2") {
-		let baseLicenseOptions = appControllerOptions;
-		let bl_type=appControllerOptions;
-		console.log("its option2");
-		console.log(baseLicenseOptions)
-	} else if (selectedOption === "option3") {
-		setValue("checkbox1", true);
-	} else if (selectedOption === "option4") {
-		setValue("checkbox2", true);
-	} else {
-		setValue("checkbox1", false);
-		setValue("checkbox2", false);
-	}
-}, [selectedOption, setValue]);
+let bl_type=""; /* blank var to point to an array of options for base license dropdown */
 
-useEffect(() => {
+  useEffect(() => {
+    if (selectedOption === "option1"){
+     let baseLicenseOptions = asgOptions;
+	let bl_type=asgOptions;
+ 	console.log("its option1");
+	console.log(baseLicenseOptions)
+	updateBaseOptions();
+} else if (selectedOption === "option2") {
+     let baseLicenseOptions = appControllerOptions;
+	let bl_type=appControllerOptions;
+ 	console.log("its option2");
+	console.log(baseLicenseOptions)
+} else if (selectedOption === "option3") {
+      setValue("checkbox1", true);
+    } else if (selectedOption === "option4") {
+      setValue("checkbox2", true);
+    } else {
+      setValue("checkbox1", false);
+      setValue("checkbox2", false);
+    }
+  }, [selectedOption, setValue]);
+
+  useEffect(() => {
     if (typeOption === "Demo") {
-	alert("Please select a license duration");
+	alert("its a demo");
 	}
 });
 
-let bl_type=""; /* blank var to point to an array of options for base license dropdown */
 let baseLicenseOptions = [
     { value: 'default', name: 'Some default option' },
     { value: 'default', name: 'Another default option' },
@@ -58,26 +56,9 @@ const asgOptions = [
 ];
 
 const appControllerOptions = [
-    { value: 'AC1', name: 'Application Controller 1' }
+	useState(
+    { value: 'AC1', name: 'Application Controller 1' })
 
-];
-
-const awsPrOptions = [
-    { value: 'SGOS6 SWG Edition', name: 'SGOS 6 SWG Edition' }
-
-];
-const awsRpOptions = [
-    { value: 'SGOS6 Reverse Proxy', name: 'SGOS 6 Reverse Proxy' }
-
-];
-const cacheflowOptions = [
-    { value: 'Cacheflow', name: 'Cacheflow' }
-];
-const maOptions = [
-    { value: 'Malware Anaylsis', name: 'Malware Analysis' }
-];
-const casOptions = [
-    { value: 'Content Analysis', name: 'Content Analysis' }
 ];
 
 const  updateBaseOptions = function(){
@@ -91,28 +72,10 @@ const  updateBaseOptions = function(){
 
 let options="";
 
-if (selected === "option1"){
-	bl_type=asgOptions
-} else if (selected === "option2"){
-	bl_type= appControllerOptions
-} else if (selected === "option3"){
-	bl_type = awsPrOptions
-} else if (selected === "option4"){
-	bl_type = awsRpOptions
-} else if (selected === "option5"){
-	bl_type = cacheflowOptions
-} else if (selected === "option6"){
-	bl_type = casOptions
-} else if (selected === "option6"){
-	bl_type = maOptions
-} else if (selected === "option7"){
-	bl_type = maOptions
-} 
-
 if (bl_type){
 	options = bl_type.map((e, key) => { console.log("Key: ",key); return <option key={key} value={e.value}>{e.name}</option>; })
 } else {
-	console.log("no bl type");
+	alert("no bl type");
 }
 
 /* This is a react component, apparrently */
@@ -160,7 +123,7 @@ class BindDropDown extends React.Component {
 		<legend name="Product">Product</legend>
 		<div id="FirstSelect" className="selectDiv">
 			<label htmlFor="firstSelect">Choose Product:</label>
-			<select {...register("selectOption")} onChange={changeSelectOptionHandler}>
+			<select {...register("selectOption")}>
 			  <option value="">Please Select:</option>
 			  <option value="option1">Advanced Secure Gateway</option>
 			  <option value="option2">Application Controller</option>
@@ -192,8 +155,7 @@ class BindDropDown extends React.Component {
 
 		<div id="SecondSelect" className="selectDiv">
 			<label htmlFor="secondSelect">Base License:</label>
-			<select {...register("baseLicenseOption")} id="baseLicenseOption">
-			<option value="">Please select:</option>
+			<select {...register("baseLicenseOption")}>
 				{ options }
 			</select>
 		</div>
@@ -276,6 +238,7 @@ class BindDropDown extends React.Component {
 
 			<label>Include Appliance Birth Certificate:</label>
 			<input type="checkbox" name="birthcert" id="birthcert"/>
+			<input type="checkbox" />
 
 			<br /> <br />
 
@@ -290,6 +253,7 @@ class BindDropDown extends React.Component {
 
 			<label>VA Offline Support:</label>
 			<input type="checkbox" name="vaoffline" id="vaoffline"/>
+			<input type="checkbox" />
 
 		</div>
 		</fieldset>
