@@ -1,6 +1,6 @@
 # SLGS-React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A rewrite of the SLGS application in React. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -66,3 +66,8 @@ See the [Create React App documentation](https://facebook.github.io/create-react
 ### `npm run build` fails to minify
 
 [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+See also:
+
+[https://www.knowledgehut.com/blog/web-development/install-react-on-mac][https://www.knowledgehut.com/blog/web-development/install-react-on-mac]

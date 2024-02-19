@@ -3,6 +3,7 @@ import './App.css';
 import React, { useEffect, useState, ReactDOM } from "react";
 import { useForm } from "react-hook-form";
 
+var createReactClass = require('create-react-class');
 
 function App() {
   const { register, handleSubmit, watch, setValue } = useForm();
@@ -147,6 +148,57 @@ class BindDropDown extends React.Component {
 /*End React component*/
 
 
+/* Table thing 
+var RecordsComponent = createReactClass({
+
+		getInitialState: function () {
+		return {
+		  tablerows:[
+		   {fname:"Tom",lname:"Moody",age:23}
+		  ]
+		};
+		},    
+	addRow: function() {
+	// add new data from here    
+	var newdata = {fname:"Tom",lname:"Moody",age:23}    
+	//take the existing state and concat the new data and set the state again    
+	this.setState({ tablerows: this.state.tablerows.concat(newdata ) });    
+	},    
+	rows:function(){
+	return this.state.tablerows.map(function(row,i){
+	    return   (<tr key={i}>
+		     <td>{row.fname}</td>
+		     <td>{row.lname}</td> 
+		     <td>{row.age}</td>
+		     </tr>);
+	});
+	},
+
+	render : function() {
+	    return (
+		<div>
+		    <table>
+			<tr>
+			    <td> row 1 </td>
+			</tr>
+			<tr>
+			    <td> row 2 </td>
+			</tr>
+			<tr>
+			    <td> row 3 </td>
+			</tr>
+			{this.rows()}
+		    </table>
+		    <button id= "addBtn" onClick={this.addRow}>ADD</button>
+		</div>
+	    );
+	}
+});
+    
+ReactDOM.render(<RecordsComponent/>, document.getElementById('display'))
+/* End table thing */
+
+const rows = ("one","two","three");
 
   return (
     <div className="App">
