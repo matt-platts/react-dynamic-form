@@ -2,7 +2,7 @@ import React from "react";
 import {render} from "react-dom";
 
 let myVar = "";
-class App extends React.Component{
+class AppTwo extends React.Component{
 	state = {
 		rows: []
 		/* Note: [{}] inserts a blank row in first */
@@ -67,23 +67,19 @@ class App extends React.Component{
 		console.log(this.state.rows);
 
 		return (
-			<div>
-			<div className="container">
-			<div className="row clearfix">
-			<div className="col-md-12 column">
 			<table 
-				className="table table-bordered table-hover" 
+				className="table table-bordered table-hover component_table" 
 				id="tab-logic"
 			>
 				<thead>
 				<tr>
-					<th className="text-center"> <td><input type="checkbox" />Select All</td> </th>
-					<th className="text-center"> Add On:<br /><select name="selectAddon" onChange={this.handleOptionChange} ><option value=""></option><option value="Etap">Etap</option><option value="Flash Streaming">Flash Streaming</option><option value="Multi Tenant Policy">Multi Tenant Policy</option></select></th>
-					<th className="text-center"> Additional Params:<br /><select name="selectAdditional" onChange={this.handleOptionTwoChange} ><option value=""></option><option value="Additional 1">Additional 1</option><option value="Additional 2">Additional 2</option></select></th>
-					<th className="text-center"> Value:<br /><select name="selectValueFor" onChange={this.handleOptionThreeChange} ><option value=""></option><option value="Value 1">Value 1</option><option value="Value 2">Value 2</option></select></th>
-					<th className="text-center"> Type:<br /><select name="selectType" onChange={this.handleOptionFourChange} ><option value=""></option><option value="Type 1">Type 1</option><option value="Type 2">Type 2</option></select></th>
-					<th className="text-center"> Duration:<br /><select name="selectDuration" onChange={this.handleOptionFiveChange} ><option value=""></option><option value="365">365</option><option value="730">730</option></select></th>
-					<th>
+					<th className="text-center"> <span>Select All</span><br /><input type="checkbox" /></th>
+					<th className="text-center"> <span>Add On:</span><br /><select name="selectAddon" onChange={this.handleOptionChange} ><option value=""></option><option value="Etap">Etap</option><option value="Flash Streaming">Flash Streaming</option><option value="Multi Tenant Policy">Multi Tenant Policy</option></select></th>
+					<th className="text-center"> <span>Additional Params:</span><br /><select name="selectAdditional" onChange={this.handleOptionTwoChange} ><option value=""></option><option value="Additional 1">Additional 1</option><option value="Additional 2">Additional 2</option></select></th>
+					<th className="text-center"> <span>Value:</span><br /><select name="selectValueFor" onChange={this.handleOptionThreeChange} ><option value=""></option><option value="Value 1">Value 1</option><option value="Value 2">Value 2</option></select></th>
+					<th className="text-center"> <span>Type:</span><br /><select name="selectType" onChange={this.handleOptionFourChange} ><option value=""></option><option value="Type 1">Type 1</option><option value="Type 2">Type 2</option></select></th>
+					<th className="text-center"> <span>Duration:</span><br /><select name="selectDuration" onChange={this.handleOptionFiveChange} ><option value=""></option><option value="365">365</option><option value="730">730</option></select></th>
+					<th><span>.</span><br />
 						<button onClick={this.handleAddRow} className = "btn btn-primary"> Add Row </button>
 
 					</th>
@@ -140,14 +136,10 @@ class App extends React.Component{
 				))}
 				</tbody>
 				</table>
-			</div>
-			</div>
-			</div>
-			</div>
 		);
 	};
 
 
 }
 
-export default App;
+export default AppTwo;

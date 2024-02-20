@@ -1,10 +1,11 @@
 .App {
   text-align: left;
-  border:1px #3333aa solid;
-  width:800px;
+  border:1px #fff solid;
+  width:900px;
   margin:20px auto;
-  padding-left:40px;
-  padding-right:40px;
+  padding-left:0px;
+  padding-right:0px;
+	background-color:#fff;
 }
 
 .App-logo {
@@ -55,13 +56,17 @@ label {font-weight:bold; margin-right:15px; display:inline-block; width:150px;}
 	margin:0px auto;
 	margin-top:15px;
 	clear:both;
-	background-color:#3333ff;
+	background-color:#5555ff;
 	color:white;
+	border-radius:5px;
+	padding:9px;
+	font-size:16px;
 }
 
 fieldset {
   padding:10px;
   margin:30px;
+  border-radius:8px;
 }
 
 thead {background-color:#f1f1f1; font-weight:bold;}
@@ -71,4 +76,80 @@ thead {background-color:#f1f1f1; font-weight:bold;}
 }
 .checkboxExtra label {
 	font-weight:normal; font-size:11px;
+}
+
+.headerBar {
+	margin:0px auto;
+	width:850px;
+	background-color:#6f5499;
+	padding:5px;
+	border-bottom:1px #333 solid;
+	color:#eee;
+	padding:25px;
+}
+
+h1, h4 {
+	font-weight:normal;
+	margin:0px;
+}
+h4 { margin-top:0px; padding-top:0px;}
+
+legend {
+	border:1px #ccc solid;
+	border-radius:5px;
+	padding:5px;
+	background-color:#f1f1f1;
+	font-size:16px;
+}
+
+select {
+	border-radius:5px;
+	padding:8px;
+}
+
+input[type=text]{
+	border-radius:5px;
+	padding:8px;
+}
+
+button {
+	border-radius:5px;
+	padding:9px;
+}
+
+.component_table { width:100%;}
+.component_table tr td {padding:15px;}
+.component_table tr th {padding-top:15px; padding-bottom:15px; font-size:13px; text-align:center;}
+.component_table thead tr th span {padding:5px; font-size:13px; text-align:center; display:inline-block; margin-bottom:5px; padding:5px;}
+
+input[type=checkbox] {
+	padding:15px;
+	margin:10px;
+	border-radius:5px;
+	height:20px;
+	width:20px;
+}
+
+.headerBar img {
+	position:relative;
+	border:1px #333 solid;
+	float:right;
+	padding:5px;
+	background-color:#fff;
+	border-radius:5px;
+
+}
+
+body {
+	background-image: url("../public/Broadcom-background.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position:fixed;
+	background-blend-mode: lighten;
+}
+
+a {
+	color:#4444cc;
+	text-decoration:none;
 }

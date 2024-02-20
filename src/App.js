@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useEffect, useState, ReactDOM } from "react";
 import { useForm } from "react-hook-form";
+import Header from "./header";
+import AppTwo from "./AppTwo";
 
 function App() {
   const { register, handleSubmit, watch, setValue } = useForm();
@@ -118,7 +120,7 @@ const rows = ("one","two","three");
 
   return (
     <div className="App">
-	<h1>SLGS License Generation System</h1>
+	<Header />
         <form onSubmit={handleSubmit(onSubmit)}>
 
 	<div id="selectRoot"></div>
@@ -296,13 +298,7 @@ const rows = ("one","two","three");
 
 		<fieldset>
 		<legend>Add On Components</legend>
-		<table style={{width: 700}}>
-		<thead>
-		<tr><td><input type="checkbox" />Select All</td><td>Add On<br /><select><option value="Etap">Etap</option><option value="Flash Streaming">Flash Streaming</option><option value="Multi-Tenant Policy">Multi Tenant Policty</option></select></td><td>Additional Params<br /><select><option value="">Select one:</option></select></td><td>Value<select><option value="">Select one:</option></select></td><td>Type<br /><select> <option value="Perpetual">Perpetual</option> <option value="Subscription">Subscription</option> <option value="Demo">Demo</option> </select> </td><td>Duration<br /><select> <option value="365">365</option> <option value="730">730</option> </select> </td><td>Action<br /><input type="button" value="Add" /></td></tr>
-		</thead>
-		<tbody>
-		</tbody>
-		</table>
+			<AppTwo />
 		</fieldset>
 		</>
 		)}
@@ -311,6 +307,11 @@ const rows = ("one","two","three");
 
         <input type="submit" value="Generate License" className="submitButton"  />
 	<br /><br />
+	<center>
+	&copy; Broadcom 2024. For support contact ES Licensing Technologies at <a href="mailto: es-licensingteam.pdl@broadcom.com">es-licensingteam.pdl@broadcom.com</a>
+	<br />
+	<br />
+	</center>
       </form>
     </div>
   );
