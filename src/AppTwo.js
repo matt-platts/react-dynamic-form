@@ -22,21 +22,6 @@ class App extends React.Component{
 		});
 	};
 	
-	handleChangeEmail = idx => e => {
-		const { name, value } = e.target;
-
-		console.log(name,value);
-
-		const rows = [...this.state.rows];
-		rows[idx] = {
-			...rows[idx],
-			email: value
-		};
-		this.setState({
-			rows
-		});
-	};
-
 	handleAddRow = () => {
 		/*alert(document.forms['selectform'].elements['selectAddon'].value);*/
 		const item = {
@@ -61,6 +46,7 @@ class App extends React.Component{
 		rows.splice(idx,1);
 		this.setState({ rows });
 	};	
+
 	handleOptionChange = (e) => {
 		this.setState({selectValue:e.target.value});
 	}
@@ -76,6 +62,7 @@ class App extends React.Component{
 	handleOptionFiveChange = (e) => {
 		this.setState({selectFiveValue:e.target.value});
 	}
+
 	render () {
 		console.log(this.state.rows);
 
